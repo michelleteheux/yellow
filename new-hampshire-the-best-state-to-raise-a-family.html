@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Hampshire The Best State to Raise a Family</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Section styles */
+        section {
+            padding: 60px 0;
+            background-color: white;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #003366;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #D4AF37;
+            margin: 10px auto;
+        }
+        
+        /* Intro section */
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .intro-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #003366;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #003366;
+        }
+        
+        /* Stats section */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* CTA section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1464822759849-e41fc4a12764?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #D4AF37;
+            color: #003366;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #e6c04d;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>New Hampshire: The Best State to Raise a Family</h1>
+            <p>Discover why the Granite State ranks #1 for family living, education, safety, and quality of life.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2 class="section-title">Why New Hampshire Stands Out</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>New Hampshire has consistently ranked as the top state for raising a family, thanks to its exceptional education system, low crime rates, and stunning natural beauty. With no state income tax and a strong economy, families can thrive financially while enjoying an unparalleled quality of life.</p>
+                    <p>The Granite State offers the perfect balance of rural charm and urban convenience, with Boston just an hour's drive from the southern border. From the White Mountains to the Seacoast, New Hampshire provides endless opportunities for outdoor recreation and family adventures.</p>
+                    <p>Communities across the state prioritize family-friendly amenities, with excellent parks, libraries, and community centers. The strong sense of community and neighborly values make New Hampshire an ideal place to put down roots.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="New Hampshire landscape">
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">What Makes New Hampshire Great for Families</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏫</div>
+                    <h3>Top-Ranked Education</h3>
+                    <p>New Hampshire consistently ranks among the top states for K-12 education, with high graduation rates and test scores that exceed national averages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Financial Benefits</h3>
+                    <p>With no state income tax or sales tax, families keep more of their hard-earned money while enjoying excellent public services.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌲</div>
+                    <h3>Natural Beauty</h3>
+                    <p>From the White Mountains to the Lakes Region and Atlantic coastline, New Hampshire offers unparalleled access to outdoor recreation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Safety & Security</h3>
+                    <p>New Hampshire consistently ranks as one of the safest states in the nation, with low crime rates across both urban and rural areas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Strong Communities</h3>
+                    <p>Tight-knit communities with excellent parks, libraries, and family-focused events create an ideal environment for raising children.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Economic Opportunity</h3>
+                    <p>A diverse economy with opportunities in technology, healthcare, manufacturing, and tourism provides stable employment options.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <h2 class="section-title">New Hampshire by the Numbers</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">#1</div>
+                    <div class="stat-label">Safest State in America</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">High School Graduation Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">State Income Tax</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">#2</div>
+                    <div class="stat-label">Best Public Schools</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="section-title">Life in the Granite State</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="New Hampshire fall foliage">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1575310758102-5b15ec7beb05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Portsmouth historic district">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1575310758102-5b15ec7beb05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Family hiking in White Mountains">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1575310758102-5b15ec7beb05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="New England town common">
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Call New Hampshire Home?</h2>
+            <p>Join thousands of families who have discovered the exceptional quality of life in the Granite State. Explore communities, schools, and housing options to find your perfect New Hampshire home.</p>
+            <a href="#" class="cta-button">Explore NH Communities</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 New Hampshire Family Living Guide. All rights reserved.</p>
+            <p>This is a demonstration page for educational purposes.</p>
+        </div>
+    </footer>
+</body>
+</html>
