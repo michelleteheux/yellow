@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governor Ayotte Kicks Off Make-A-Wish Calendar Fundraiser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #2a4a8c, #3a6acc);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            color: #ffd700;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .article-content {
+            flex: 2;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffd700;
+        }
+        
+        h3 {
+            color: #2a4a8c;
+            margin: 25px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background-color: #fff9e6;
+            padding: 20px;
+            border-left: 4px solid #ffd700;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 20px;
+            background: #f0f5ff;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #2a4a8c;
+        }
+        
+        /* Calendar Preview */
+        .calendar-preview {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .calendar-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background: #2a4a8c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px 5px;
+        }
+        
+        .btn:hover {
+            background: #1a2a6c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: #ff6b6b;
+        }
+        
+        .btn-primary:hover {
+            background: #ff5252;
+        }
+        
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Event Details */
+        .event-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .detail-item {
+            flex: 1;
+            min-width: 200px;
+            background: #f0f5ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .detail-item i {
+            font-size: 1.5rem;
+            color: #2a4a8c;
+            margin-bottom: 10px;
+        }
+        
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 150px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a2a6c;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #2a4a8c;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #2a4a8c;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #ffd700;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #2a4a8c;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .event-details {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <i class="fas fa-calendar-star logo"></i>
+                <div>
+                    <h1>Governor Ayotte Kicks Off Make-A-Wish Calendar Fundraiser</h1>
+                    <p class="subtitle">Join us in supporting children with critical illnesses through our 2024 charity calendar initiative</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <article class="article-content">
+                <h2>Governor Launches Annual Charity Initiative</h2>
+                
+                <p>Governor Sarah Ayotte today announced the official kickoff of the 2024 Make-A-Wish Calendar Fundraiser, a statewide initiative to grant wishes for children battling critical illnesses. The event was held at the State Capitol with dozens of volunteers, past wish recipients, and community leaders in attendance.</p>
+                
+                <div class="quote">
+                    "Every child deserves moments of joy and hope, especially when facing health challenges. This calendar fundraiser represents our community's commitment to bringing light into the lives of these brave children and their families."
+                    <div class="quote-author">- Governor Sarah Ayotte</div>
+                </div>
+                
+                <p>The 2024 calendar features stunning photographs of New Hampshire's natural beauty alongside inspirational stories of wish recipients. Each month highlights a different child's journey and the wish that brought them hope during difficult treatments.</p>
+                
+                <h3>Fundraiser Goals and Impact</h3>
+                <p>This year's goal is to raise $250,000, which would fund approximately 25 wishes for local children. Since its inception five years ago, the calendar fundraiser has granted over 100 wishes, providing transformative experiences for children and their families.</p>
+                
+                <div class="highlight">
+                    <h3>How to Participate</h3>
+                    <p>Calendars are available for a suggested donation of $25 and can be purchased online, at participating retailers statewide, or at Governor's Office events throughout the month. Businesses can also participate through bulk orders and corporate sponsorship programs.</p>
+                </div>
+                
+                <div class="calendar-preview">
+                    <h3>2024 Calendar Preview</h3>
+                    <img src="https://images.unsplash.com/photo-1517088455889-bfa75135412c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="2024 Make-A-Wish Calendar Cover" class="calendar-image">
+                    <p><em>Featuring beautiful photography and inspiring stories throughout the year</em></p>
+                    <a href="#" class="btn btn-large btn-primary">Purchase Calendar Now</a>
+                    <a href="#" class="btn btn-large">Become a Sponsor</a>
+                </div>
+                
+                <h3>Event Details</h3>
+                <div class="event-details">
+                    <div class="detail-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <h4>Kickoff Event</h4>
+                        <p>October 15, 2023</p>
+                        <p>10:00 AM - 2:00 PM</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>State Capitol Building</p>
+                        <p>Concord, NH</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h4>Goal</h4>
+                        <p>$250,000</p>
+                        <p>25 Wishes Granted</p>
+                    </div>
+                </div>
+                
+                <h3>Photo Gallery</h3>
+                <div class="photo-gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Governor with volunteers">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1549056572-75914d6d7e1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Make-A-Wish children">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Calendar display">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fundraiser event">
+                    </div>
+                </div>
+            </article>
+            
+            <aside class="sidebar">
+                <div class="info-card">
+                    <h2>Get Involved</h2>
+                    <p>There are many ways to support the Make-A-Wish Calendar Fundraiser:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; margin-bottom: 20px;">
+                        <li>Purchase calendars for your home or office</li>
+                        <li>Become a corporate sponsor</li>
+                        <li>Volunteer at distribution centers</li>
+                        <li>Share on social media</li>
+                        <li>Host a fundraising event</li>
+                    </ul>
+                    <a href="#" class="btn">Volunteer Information</a>
+                </div>
+                
+                <div class="info-card">
+                    <h2>Make-A-Wish Impact</h2>
+                    <p>Last year's fundraiser helped grant wishes for 22 children, including:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; margin-bottom: 20px;">
+                        <li>Sophia, 7 - Trip to Disney World</li>
+                        <li>James, 10 - Meeting his sports hero</li>
+                        <li>Lily, 6 - Backyard playground</li>
+                        <li>Michael, 12 - Gaming setup</li>
+                    </ul>
+                    <p><strong>94%</strong> of every dollar donated goes directly to wish granting.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h2>Upcoming Events</h2>
+                    <div style="margin-bottom: 15px;">
+                        <h4>Calendar Signing</h4>
+                        <p>Oct 22, 1-3 PM<br>Governor's Office</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4>Corporate Breakfast</h4>
+                        <p>Nov 5, 8-10 AM<br>Manchester Hotel</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4>Wish Reveal Celebration</h4>
+                        <p>Nov 18, 2-4 PM<br>Children's Hospital</p>
+                    </div>
+                    <a href="#" class="btn">Full Event Calendar</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Make-A-Wish</h3>
+                    <p>Make-A-Wish creates life-changing wishes for children with critical illnesses. We believe a wish is an integral part of a child's treatment journey.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Purchase a Calendar</a></li>
+                        <li><a href="#">Become a Sponsor</a></li>
+                        <li><a href="#">Volunteer Opportunities</a></li>
+                        <li><a href="#">Wish Stories</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Charity Lane, Concord, NH</p>
+                    <p><i class="fas fa-phone"></i> (603) 555-4673</p>
+                    <p><i class="fas fa-envelope"></i> info@makeawish-nh.org</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Make-A-Wish Foundation. All rights reserved. | This site is for demonstration purposes only.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
